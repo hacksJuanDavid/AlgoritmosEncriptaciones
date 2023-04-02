@@ -1,0 +1,32 @@
+El algoritmo César es un método de cifrado muy sencillo que se utiliza 
+para ocultar información mediante la sustitución de caracteres. 
+El algoritmo toma su nombre del emperador romano Julio César, 
+quien lo utilizó para comunicarse con sus generales.
+
+La idea básica del algoritmo es desplazar cada letra del texto original 
+un número fijo de posiciones en el alfabeto. Por ejemplo, si el desplazamiento 
+es de 3 posiciones, la letra "A" se convierte en "D", la letra "B" se convierte en "E", 
+la letra "C" se convierte en "F", y así sucesivamente.
+
+El proceso de cifrado se puede expresar como una fórmula matemática:
+    #C(i) = (P(i) + n) mod 26
+
+donde:
+    #C(i) es el carácter cifrado en la posición "i".
+    #P(i) es el carácter original en la posición "i".
+    #n es el número de posiciones que se desplaza cada letra en el alfabeto (la clave del cifrado).
+    #mod 26 es una operación matemática que asegura que el resultado final esté dentro de los límites del alfabeto.
+
+El proceso de descifrado se realiza de manera similar, pero en sentido contrario:
+    #P(i) = (C(i) - n) mod 26
+
+donde:
+    #P(i) es el carácter original en la posición "i".
+    #C(i) es el carácter cifrado en la posición "i".
+    #n es el número de posiciones que se desplaza cada letra en el alfabeto (la misma clave que se usó para cifrar).
+    #mod 26 es una operación matemática que asegura que el resultado final esté dentro de los límites del alfabeto.
+
+Es importante destacar que el algoritmo César es muy fácil de implementar y entender,
+pero también es muy fácil de romper mediante técnicas de análisis de frecuencia y 
+otros métodos criptográficos. Por esta razón, se utiliza principalmente con 
+fines educativos y como base para algoritmos de cifrado más seguros.

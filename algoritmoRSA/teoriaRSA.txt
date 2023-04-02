@@ -1,0 +1,23 @@
+Cómo funciona RSA y cómo implementarlo en Go.
+En RSA, se utiliza un par de claves, una pública y una privada. 
+
+La clave pública se utiliza para cifrar el mensaje, mientras que 
+la clave privada se utiliza para descifrarlo. La seguridad del cifrado
+se basa en la dificultad de factorizar números grandes en sus factores primos.
+
+Para generar un par de claves RSA, se siguen los siguientes pasos:
+    #Se eligen dos números primos grandes p y q. Estos números deben ser lo suficientemente grandes para que sea difícil factorizar su producto n = p * q.
+    #Se calcula el producto n = p * q.
+    #Se calcula la función phi de Euler de n, que se define como phi(n) = (p - 1) * (q - 1).
+    #Se elige un número e que sea coprimo con phi(n), es decir, que no tenga ningún factor común con phi(n) excepto 1. e es la clave pública.
+    #Se calcula el número d, que es el inverso multiplicativo de e modulo phi(n). d es la clave privada.
+    #Se devuelve el par de claves (e, n) como clave pública y d como clave privada.
+
+Para cifrar un mensaje m utilizando la clave pública (e, n), se sigue el siguiente proceso:
+    #Se convierte el mensaje m en un número entero M, utilizando algún esquema de codificación(bytes).
+    #Se calcula el mensaje cifrado C como C = M^e mod n.
+
+Para descifrar el mensaje cifrado C utilizando la clave privada d, se sigue el siguiente proceso:
+    #Se calcula el mensaje original M como M = C^d mod n.
+    #Se convierte el número entero M en el mensaje original utilizando el esquema de codificación utilizado para cifrar el mensaje.
+
